@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .text-color {
+        color: darkslategray;
+        height: 30px;
+      }
+      .btn{
+        color:white;
+        background-color:coral;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    </style>
+
+    <input
+      type="number"
+      id="phoneNumber"
+      class="text-color"
+      placeholder="Enter Phone Number"
+    /><br />
+    <br />
+
+    <button id="submitBtn" class="btn">Submit</button>
+
+    <p id="paragraph"></p>
+
+    <script>
+      const userNumber$ = document.getElementById("phoneNumber");
+      const submitBtn$ = document.querySelector("#submitBtn");
+      const para = document.querySelector("#paragraph");
+
+      submitBtn$.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (userNumber$.value.length === 10) {
+          para.innerText = "Number is Valid";
+          para.style.color = "Green";
+        } else {
+          para.innerHTML = "Please Enter the 10 digit number";
+          para.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
